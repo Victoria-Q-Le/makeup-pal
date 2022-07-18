@@ -2,6 +2,7 @@
   <h3>
     {{appt.name}}
     <fa-icon
+      (click) = "onDelete(appt)"
       [icon]="faTimes"
       [ngStyle] = "{'color':'red'}"
     >

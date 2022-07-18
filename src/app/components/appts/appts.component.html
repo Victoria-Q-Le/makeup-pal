@@ -1,5 +1,6 @@
 <app-appt-item
   *ngFor = "let appt of appts"
   [appt] = "appt"
+  (onDeleteAppt)="deleteAppt(appt)"
 >
 </app-appt-item>

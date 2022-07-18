@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Appt} from '../../Appt'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,12 +9,19 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class ApptItemComponent implements OnInit {
 
+  @Output() onDeleteAppt: EventEmitter<Appt> = new EventEmitter()
+
   @Input() appt: Appt
   faTimes = faTimes;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onDelete(appt: Appt){ //ran into error if not specifying the type of appt
+    // console.log(appt);
+    this.onDeleteAppt.emit(appt)
+
   }
 
 }

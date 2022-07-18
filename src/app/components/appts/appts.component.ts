@@ -14,7 +14,15 @@ export class ApptsComponent implements OnInit {
   constructor(private apptService: ApptService) { }
 
   ngOnInit(): void {
-    this.apptService.getAppts().subscribe((appts) => (this.appts = appts))
+    this.apptService
+      .getAppts()
+      .subscribe((appts) => (this.appts = appts))
+  }
+
+  deleteAppt(appt: Appt){
+    this.apptService
+      .deleteAppt(appt)
+      .subscribe(() => (this.appts = this.appts.filter((a) => a.id !== appt.id)))
   }
 
 }

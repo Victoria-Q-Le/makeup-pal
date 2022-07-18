@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
-import {Observable, of} from 'rxjs'
+import {Observable} from 'rxjs'
 import {Appt} from '../Appt'
-import {APPTS} from '../mock-appts'
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +13,10 @@ export class ApptService {
 
   getAppts(): Observable<Appt[]> {
     return this.http.get<Appt[]>(this.apiUrl)
+  }
+
+  deleteAppt(appt: Appt): Observable<Appt>{
+    const url = `${this.apiUrl}/${appt.id}`
+    return this.http.delete<Appt>(url)
   }
 }
