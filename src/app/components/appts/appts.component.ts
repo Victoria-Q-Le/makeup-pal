@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ApptService} from '../../services/appt.service'
 import {Appt} from '../../Appt';
-import {APPTS} from '../../mock-appts'
+
 
 @Component({
   selector: 'app-appts',
@@ -8,11 +9,12 @@ import {APPTS} from '../../mock-appts'
   styleUrls: ['./appts.component.css']
 })
 export class ApptsComponent implements OnInit {
-  appts: Appt[] = APPTS;
+  appts: Appt[] = [];
 
-  constructor() { }
+  constructor(private apptService: ApptService) { }
 
   ngOnInit(): void {
+    this.apptService.getAppts().subscribe((appts) => (this.appts = appts))
   }
 
 }
