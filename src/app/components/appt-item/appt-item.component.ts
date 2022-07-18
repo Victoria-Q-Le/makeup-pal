@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Appt} from '../../Appt'
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-appt-item',
@@ -9,6 +10,7 @@ import {Appt} from '../../Appt'
 export class ApptItemComponent implements OnInit {
 
   @Input() appt: Appt
+  faTimes = faTimes;
 
   constructor() { }
 

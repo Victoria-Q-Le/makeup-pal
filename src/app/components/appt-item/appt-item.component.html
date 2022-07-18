@@ -1,1 +1,11 @@
-<p>appt-item works!</p>
+<div class="appt">
+  <h3>
+    {{appt.name}}
+    <fa-icon
+      [icon]="faTimes"
+      [ngStyle] = "{'color':'red'}"
+    >
+    </fa-icon>
+  </h3>
+  <p>{{appt.day}}</p>
+</div>
