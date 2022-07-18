@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "makeup-pal"
+  "cli": {
+    "analytics": "f4fcb167-da1d-4fa3-9c9f-d9cae735115d"
+  }
 }

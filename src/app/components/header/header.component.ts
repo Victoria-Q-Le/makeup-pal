@@ -13,4 +13,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {//life cycle method, runs when the component loaded
   }
 
+  toggleAddAppt(){
+    console.log('toggle');
+
+  }
+
 }
