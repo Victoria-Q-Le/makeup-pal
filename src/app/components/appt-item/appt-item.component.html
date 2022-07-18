@@ -1,4 +1,8 @@
-<div class="appt">
+<div
+  [ngClass] = "{paid: appt.paid}"
+  class="appt"
+  (dblclick) = "onToggle(appt)"
+  >
   <h3>
     {{appt.name}}
     <fa-icon

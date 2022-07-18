@@ -3,6 +3,12 @@ import {HttpClient, HttpHeaders} from '@angular/common/http'
 import {Observable} from 'rxjs'
 import {Appt} from '../Appt'
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,5 +24,10 @@ export class ApptService {
   deleteAppt(appt: Appt): Observable<Appt>{
     const url = `${this.apiUrl}/${appt.id}`
     return this.http.delete<Appt>(url)
+  }
+
+  updateApptPaid(appt: Appt): Observable<Appt>{
+    const url = `${this.apiUrl}/${appt.id}`
+    return this.http.put<Appt>(url, appt, httpOptions)
   }
 }

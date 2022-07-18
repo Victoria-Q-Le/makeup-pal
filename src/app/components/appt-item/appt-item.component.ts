@@ -10,6 +10,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 export class ApptItemComponent implements OnInit {
 
   @Output() onDeleteAppt: EventEmitter<Appt> = new EventEmitter()
+  @Output() onTogglePaid: EventEmitter<Appt> = new EventEmitter()
 
   @Input() appt: Appt
   faTimes = faTimes;
@@ -21,7 +22,11 @@ export class ApptItemComponent implements OnInit {
   onDelete(appt: Appt){ //ran into error if not specifying the type of appt
     // console.log(appt);
     this.onDeleteAppt.emit(appt)
-
   }
+
+  onToggle(appt: Appt){
+    this.onTogglePaid.emit(appt)
+  }
+
 
 }

@@ -25,4 +25,11 @@ export class ApptsComponent implements OnInit {
       .subscribe(() => (this.appts = this.appts.filter((a) => a.id !== appt.id)))
   }
 
+  togglePaid(appt: Appt){
+    appt.paid = !appt.paid
+    this.apptService
+      .updateApptPaid(appt)
+      .subscribe()
+  }
+
 }

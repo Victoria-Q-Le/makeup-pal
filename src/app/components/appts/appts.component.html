@@ -2,5 +2,6 @@
   *ngFor = "let appt of appts"
   [appt] = "appt"
   (onDeleteAppt)="deleteAppt(appt)"
+  (onTogglePaid)="togglePaid(appt)"
 >
 </app-appt-item>

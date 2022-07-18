@@ -10,7 +10,7 @@
       "id": 2,
       "name": "An Bui",
       "day": "May 6th at 4:30pm",
-      "paid": false
+      "paid": true
     },
     {
       "id": 3,
