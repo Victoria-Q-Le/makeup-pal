@@ -30,4 +30,8 @@ export class ApptService {
     const url = `${this.apiUrl}/${appt.id}`
     return this.http.put<Appt>(url, appt, httpOptions)
   }
+
+  addAppt(appt: Appt): Observable<Appt>{
+    return this.http.post<Appt>(this.apiUrl, appt, httpOptions)
+  }
 }

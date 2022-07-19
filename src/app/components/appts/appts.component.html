@@ -1,7 +1,13 @@
+<app-add-appt
+  (onAddAppt)="addAppt($event)"
+>
+</app-add-appt>
+
 <app-appt-item
   *ngFor = "let appt of appts"
   [appt] = "appt"
   (onDeleteAppt)="deleteAppt(appt)"
   (onTogglePaid)="togglePaid(appt)"
+
 >
 </app-appt-item>

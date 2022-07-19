@@ -32,4 +32,10 @@ export class ApptsComponent implements OnInit {
       .subscribe()
   }
 
+  addAppt(appt: Appt){
+    this.apptService
+      .addAppt(appt)
+      .subscribe((appt) =>(this.appts.push(appt)))
+  }
+
 }
